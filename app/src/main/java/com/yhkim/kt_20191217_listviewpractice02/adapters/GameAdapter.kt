@@ -24,10 +24,9 @@ class GameAdapter(context:Context, resId:Int, list:ArrayList<GameData>) : ArrayA
             tempRow = inf.inflate(R.layout.game_list_item, null)
         }
 
-
-        if(tempRow == null) {
-            tempRow = inf.inflate(R.layout.game_list_item, null)
-        }
+//        if(tempRow == null) {
+//            tempRow = inf.inflate(R.layout.game_list_item, null)
+//        }
 
         val row = tempRow!!
 
