@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.yhkim.kt_20191217_listviewpractice02.R
-import com.yhkim.kt_20191217_listviewpractice02.datas.GameData
+import com.yhkim.kt_20191217_listviewpractice02.datas.BookData
 
-class GameAdapter(context:Context, resId:Int, list:ArrayList<GameData>) : ArrayAdapter<GameData>(context, resId, list){
+class BookAdapter(context:Context, resId:Int, list:ArrayList<BookData>) : ArrayAdapter<BookData>(context, resId, list){
 
     val mContext = context
     val mList = list
@@ -20,28 +20,23 @@ class GameAdapter(context:Context, resId:Int, list:ArrayList<GameData>) : ArrayA
         var tempRow = convertView
         //convertView: View? => convertView가 널 일수 있다.!
         //let 을 이용한 널처리 방법
+
         tempRow?.let {
             //tempRow가 null 이 아니면
         }.let {
             //tempRow가 null 이면
-            tempRow = inf.inflate(R.layout.game_list_item, null)
+            tempRow = inf.inflate(R.layout.book_list_item, null)
         }
-
-//        if(tempRow == null) {
-//            tempRow = inf.inflate(R.layout.game_list_item, null)
-//        }
 
         val row = tempRow!!
 
         val data = mList.get(position)
 
-        val gameTitleTxt = row.findViewById<TextView>(R.id.gameTitleTxt)
-        val gameCompanyTxt = row.findViewById<TextView>(R.id.gameCompanyTxt)
+        val bookTitleTxt = row.findViewById<TextView>(R.id.bookTitleTxt)
+        val bookCompanyTxt = row.findViewById<TextView>(R.id.bookCompanyTxt)
 
-        gameTitleTxt.text = data.title
-        gameCompanyTxt.text = data.companyName
-
-
+        bookTitleTxt.text = data.title
+        bookCompanyTxt.text = data.companyName
 
         return row
 
