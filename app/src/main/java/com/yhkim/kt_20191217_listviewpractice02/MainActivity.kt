@@ -12,11 +12,9 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
-        TODO("not implemented")
     }
 
     override fun setValues() {
-        TODO("not implemented")
     }
 
 }
