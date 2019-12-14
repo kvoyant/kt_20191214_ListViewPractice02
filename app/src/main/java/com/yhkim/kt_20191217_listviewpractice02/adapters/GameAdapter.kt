@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.TextView
 import com.yhkim.kt_20191217_listviewpractice02.R
 import com.yhkim.kt_20191217_listviewpractice02.datas.GameData
 
@@ -21,6 +22,16 @@ class GameAdapter(context:Context, resId:Int, list:ArrayList<GameData>) : ArrayA
         }
 
         val row = tempRow!!
+
+        val data = mList.get(position)
+
+        val gameTitleTxt = row.findViewById<TextView>(R.id.gameTitleTxt)
+        val gameCompanyTxt = row.findViewById<TextView>(R.id.gameCompanyTxt)
+
+        gameTitleTxt.text = data.title
+        gameCompanyTxt.text = data.companyName
+
+
 
         return row
 
