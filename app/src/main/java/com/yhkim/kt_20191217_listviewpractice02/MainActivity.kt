@@ -21,6 +21,14 @@ class MainActivity : BaseActivity() {
 
     override fun setupEvents() {
 
+        gameListView.setOnItemLongClickListener { parent, view, position, id ->
+
+            val clickeGameData = gameList.get(position)
+            Toast.makeText(mContext, "${clickeGameData.title} 을 삭제 하려고 함", Toast.LENGTH_SHORT).show()
+
+            return@setOnItemLongClickListener false
+        }
+
         gameListView.setOnItemClickListener { parent, view, position, id ->
 //            Toast.makeText(mContext, "${position}번 줄 클릭", Toast.LENGTH_SHORT).show()
 

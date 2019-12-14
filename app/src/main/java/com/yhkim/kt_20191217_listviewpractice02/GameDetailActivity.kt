@@ -3,7 +3,6 @@ package com.yhkim.kt_20191217_listviewpractice02
 import android.os.Bundle
 import com.yhkim.kt_20191217_listviewpractice02.datas.GameData
 import kotlinx.android.synthetic.main.activity_game_detail.*
-import kotlinx.android.synthetic.main.game_list_item.*
 
 class GameDetailActivity : BaseActivity() {
 
