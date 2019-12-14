@@ -21,10 +21,20 @@ class MainActivity : BaseActivity() {
 
     override fun setupEvents() {
 
+        addGameBtn.setOnClickListener {
+            gameList.add(GameData("임시게임", "임시개발사"))
+            gameAdapter?.notifyDataSetChanged()
+        }
+
         gameListView.setOnItemLongClickListener { parent, view, position, id ->
 
             val clickeGameData = gameList.get(position)
             Toast.makeText(mContext, "${clickeGameData.title} 을 삭제 하려고 함", Toast.LENGTH_SHORT).show()
+
+//            실제 게임 삭제 + 내용 반영
+//            gameList.remove(clickeGameData)
+            gameList.removeAt(position)
+            gameAdapter?.notifyDataSetChanged()
 
             return@setOnItemLongClickListener true//false 일경우 아래도 순차적으로 실행
         }
