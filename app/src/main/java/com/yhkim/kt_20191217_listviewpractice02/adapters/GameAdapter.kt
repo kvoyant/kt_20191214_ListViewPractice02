@@ -16,7 +16,15 @@ class GameAdapter(context:Context, resId:Int, list:ArrayList<GameData>) : ArrayA
     val inf = LayoutInflater.from(mContext)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+
         var tempRow = convertView
+        //convertView: View? => convertView가 널 일수 있다.!
+        //let 을 이용한 널처리 방법
+        tempRow?.let {
+            tempRow = inf.inflate(R.layout.game_list_item, null)
+        }
+
+
         if(tempRow == null) {
             tempRow = inf.inflate(R.layout.game_list_item, null)
         }
