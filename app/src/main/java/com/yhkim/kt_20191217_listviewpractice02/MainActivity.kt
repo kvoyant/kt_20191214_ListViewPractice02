@@ -1,6 +1,7 @@
 package com.yhkim.kt_20191217_listviewpractice02
 
 import android.os.Bundle
+import android.widget.Toast
 import com.yhkim.kt_20191217_listviewpractice02.adapters.GameAdapter
 import com.yhkim.kt_20191217_listviewpractice02.datas.GameData
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,6 +19,10 @@ class MainActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+
+        gameListView.setOnItemClickListener { parent, view, position, id ->
+            Toast.makeText(mContext, "${position}번 줄 클릭", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun setValues() {
